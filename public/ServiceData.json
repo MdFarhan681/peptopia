@@ -1,0 +1,99 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Pets",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in cold weather.",
+    "image": "https://i.ibb.co.com/JRpDYNrf/Screenshot-2025-10-22-081401.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co.com/2YKPhFBN/pet2.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Bed Setup Consultation",
+    "providerName": "WarmWhiskers",
+    "providerEmail": "team@warmwhiskers.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Advice and setup of safe heated bedding options for senior or short-haired pets.",
+   "image": "https://i.ibb.co.com/NgKF95VN/pet4.png",
+    "category": "Consultation"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Hypoallergenic Winter Bath",
+    "providerName": "FurryFresh",
+    "providerEmail": "care@furryfresh.com",
+    "price": 28,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Gentle winter bath and moisturizing treatment to prevent dry itchy skin.",
+    "image": "https://i.ibb.co.com/dJwWr6mz/pet3.png",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Paw Wax & Boot Fitting",
+    "providerName": "PawShield",
+    "providerEmail": "support@pawshield.com",
+    "price": 20,
+    "rating": 4.85,
+    "slotsAvailable": 2,
+    "description": "Paw balm application and boot fitting to protect paws from ice and salt.",
+    "image": "https://i.ibb.co.com/NgKF95VN/pet4.png",
+    "category": "Protective Gear"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Cold-Weather Nutrition Plan",
+    "providerName": "VetNutrition Co",
+    "providerEmail": "nutrition@vetco.com",
+    "price": 40,
+    "rating": 4.95,
+    "slotsAvailable": 3,
+    "description": "Personalized diet plans to help pets maintain energy and healthy weight during winter.",
+    "image": "https://i.ibb.co.com/JRpDYNrf/Screenshot-2025-10-22-081401.png",
+    "category": "Nutrition"
+  },{
+    "serviceId": 7,
+    "serviceName": "Winter Coat Fitting for Pets",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 20,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom coat fitting and warm outfit options to keep your dog comfortable in cold weather.",
+    
+    "image": "https://i.ibb.co.com/2YKPhFBN/pet2.png",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 8,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming with moisturizing paw balm and winter-safe shampoo.",
+    "image": "https://i.ibb.co.com/JRpDYNrf/Screenshot-2025-10-22-081401.png",
+    
+    "category": "Grooming"
+  }
+]
