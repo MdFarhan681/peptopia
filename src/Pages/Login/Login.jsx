@@ -29,7 +29,6 @@ signIn(email,password).then((result)=>{
   toast.success("Successfull LogIn")
 }).catch((error)=>{
 
-  toast(error.code)
   if(error.code ==="auth/wrong-password"){
  toast.error("Incorrect Password")
   } else if(error.code === "auth/user-not-found"){
