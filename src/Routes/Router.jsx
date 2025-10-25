@@ -11,6 +11,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRouth from "../Components/PrivateRouth/PrivateRouth";
 import Update from "../Pages/Update/Update";
 import Forget from "../Pages/Forget/Forget";
+import Review from "../Components/Review/Review";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/update",
         Component: Update,
+      },
+      {
+        path: "/review",
+        Component: Review,
       },
       {
         path: "/ServiceDetails/:serviceId",

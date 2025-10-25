@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router";
 import Card from "../../Components/Card/Card";
 import WinterCareTips from "../../Components/Tips/Tips";
 import ExpertVets from "../../Components/Expert/Expert";
+import Review from "../../Components/Review/Review";
 
 
 const Home = () => {
@@ -36,6 +37,11 @@ const Home = () => {
       </div>
       <div className="expert">
         <ExpertVets></ExpertVets>
+      </div>
+
+       <div className="review">
+        <Review></Review>
+  
       </div>
 
      
