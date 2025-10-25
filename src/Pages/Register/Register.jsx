@@ -30,6 +30,8 @@ const Register = () => {
       toast.error(
         "Password must include uppercase,lowercase and at least 6 characters"
       );
+       setLoading(false);
+
       return;
     }
 
@@ -48,21 +50,25 @@ const Register = () => {
         form.reset();
       })
       .catch((err) => {
-        console.log("Profile update error:", err);
+        // console.log("Profile update error:", err);
         toast.error("Signup success, but failed to update profile");
-      }) 
+         
+
+      }) .finally(() => setLoading(false)); 
        
        
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {
           toast.error("This email is already registered.Please login");
+         
         } else if (error.code === "auth/invalid-email") {
           toast.error("Invalid email");
+          
         } else {
           toast.error("Signup Failed.Please try again.");
         } 
-        setLoading(false);
+       setLoading(false);
 
       });
 

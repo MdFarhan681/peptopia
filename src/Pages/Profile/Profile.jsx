@@ -57,7 +57,7 @@ const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg";
              
 
               <Link
-                to={`/auth/login`}
+                to={`/auth/register`}
                 className="btn bg-primary rounded-sm w-full my-2 "
               >
                  Create Profile

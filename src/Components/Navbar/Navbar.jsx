@@ -22,11 +22,11 @@ const Navbar = () => {
  }
 
  const handleLogOut=()=>{
-  console.log("user trying to logout")
+  // console.log("user trying to logout")
   logOut().then(()=>{
 toast.success("Logged Out Successfully")
   }).catch(()=>{
-   console.log("Try again to logout");
+  //  console.log("Try again to logout");
   })
  }
 
@@ -36,9 +36,9 @@ toast.success("Logged Out Successfully")
   
    const link=(<>
 
-   <NavLink onClick={()=> handleNav()} className="px-3 " to="/">Home</NavLink>
-   <NavLink onClick={()=> handleNav()}  className="px-3 " to="/services">Services</NavLink>
-   <NavLink onClick={()=> handleNav()} className="px-3 " to="/Profile">My profile</NavLink>
+   <NavLink onClick={()=> handleNav()} className="px-3 font-semibold" to="/">Home</NavLink>
+   <NavLink onClick={()=> handleNav()}  className="px-3 font-semibold" to="/services">Services</NavLink>
+   <NavLink onClick={()=> handleNav()} className="px-3 font-semibold " to="/Profile">My profile</NavLink>
 
    
    
