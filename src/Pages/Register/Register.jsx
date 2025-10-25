@@ -4,6 +4,7 @@ import { auth, AuthContext, googleProvider } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import { PiEyeClosed } from "react-icons/pi";
 import { BsEyeglasses } from "react-icons/bs";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const location = useLocation();
@@ -32,12 +33,23 @@ const Register = () => {
     createuser(email, password)
       .then((userCredential) => {
         const user = userCredential.user;
-           setuser(user)
-
-       
-        navigate(`${location.state ? location.state : "/"}`);
-        form.reset();
+           updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {
+        
+        setuser({ ...user, displayName: name, photoURL: photo }); 
         toast.success("Signup Successfull");
+        navigate(location.state ? location.state : "/");
+        form.reset();
+      })
+      .catch((err) => {
+        console.log("Profile update error:", err);
+        toast.error("Signup success, but failed to update profile");
+      });
+       
+       
       })
       .catch((error) => {
         if (error.code === "auth/email-already-in-use") {

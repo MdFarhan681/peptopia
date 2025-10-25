@@ -91,8 +91,8 @@ toast.success("Logged Out Successfully")
   {
       user ?(
         <>
-        <Link to='/Profile'> <img  src={user.photoURL || "" } className='w-12 h-12 mx-2 rounded-full border border-blue-300
-     p-1' alt="" /></Link>
+        <Link to='/Profile'className="tooltip tooltip-bottom tooltip-primary" data-tip={user.displayName}> <img  src={user.photoURL || "https://i.ibb.co.com/7dLrnrMw/mann.jpg" } className='w-12 h-12 mx-2 rounded-full border border-blue-300
+     p-1 hover:'alt="" /></Link>
 
           <button onClick={handleLogOut} className="btn bg-primary rounded-sm ">LogOut</button>
 
