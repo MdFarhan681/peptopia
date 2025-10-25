@@ -10,12 +10,15 @@ const Login = () => {
   const navigate=useNavigate()
   const [email, setEmail] = useState("")
   const [showPassword, setShowPassword] = useState(false);
+  
 
  
 const{signIn,googleSignIn,}=use(AuthContext)
 
   const handleLogin=(e)=>{
+    
 e.preventDefault()
+
 const form =e.target;
 
 const email =form.email.value
@@ -40,6 +43,7 @@ toast.error("No user found with that email")
   }
    
 })
+
   }
 
 

@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router'
 import logo from "../../assets/logo.png"
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast from 'react-hot-toast';
+import 'animate.css';
 
 
 const Navbar = () => {
@@ -58,7 +59,7 @@ toast.success("Logged Out Successfully")
       )
     }
 
-    <div className="navbar bg-base-100 shadow-sm w-full px-[7%]">
+    <div className="navbar bg-base-100 shadow-sm w-full px-[7%] relative z-50">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,10 +71,9 @@ toast.success("Logged Out Successfully")
        {link}
       </ul>
     </div>
-    <div className="logo flex btn btn-ghost p-1 h-fit">
+    <div className="logo animate__animated animate__rubberBand flex btn btn-ghost p-1 h-fit">
          <img className='w-12 h-10 rounded-xl ' src={logo} alt="" />
     <a className=" text-xl text-primary">Peptopia</a>
-
     
 
     </div>

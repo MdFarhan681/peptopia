@@ -9,18 +9,21 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
    const [showPassword, setShowPassword] = useState(false);
   const { createuser, setuser,googleSignIn, updateUser } = use(AuthContext);
 
-  const handleSub = (e) => {
+  const handleSub =(e) => {
     e.preventDefault();
+      setLoading(true);
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
 
-    console.log(email,photo,name)
+
+    
 
     const isValid = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password);
     if (!isValid) {
@@ -47,7 +50,7 @@ const Register = () => {
       .catch((err) => {
         console.log("Profile update error:", err);
         toast.error("Signup success, but failed to update profile");
-      });
+      }) 
        
        
       })
@@ -58,7 +61,9 @@ const Register = () => {
           toast.error("Invalid email");
         } else {
           toast.error("Signup Failed.Please try again.");
-        }
+        } 
+        setLoading(false);
+
       });
 
 
@@ -136,9 +141,9 @@ const Register = () => {
                        </div>
              
 
-              <button type="submit" className="btn bg-primary mt-4">
-                Signup{" "}
-              </button>
+                <button type="submit" className="btn bg-primary mt-4 w-full" disabled={loading}>
+              {loading ? <span className="loading loading-spinner"></span> : "Signup"}
+            </button>
 
               <p className="font-semibold text-center pt-3">
                 Already have an account?
