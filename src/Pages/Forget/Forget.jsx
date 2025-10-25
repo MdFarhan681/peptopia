@@ -53,8 +53,8 @@ const Forget = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="card bg-base-100 w-full md:w-96 shadow-lg p-6">
+    <div className="flex justify-center items-center min-h-screen ">
+      <div className="card bg-base-100 w-[92%] md:w-96 shadow-lg p-6">
         <h2 className="text-2xl font-bold text-center text-secondary mb-4">
           Reset Your Password
         </h2>

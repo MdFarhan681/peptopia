@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/services",
         Component: Services,
+         loader: () => fetch("/ServiceData.json"),
       },
       {
         path: "/Profile",

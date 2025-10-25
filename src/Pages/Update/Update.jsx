@@ -37,7 +37,7 @@ const { createuser, setuser, updateUser,user } = use(AuthContext);
 
 
      
-    <div className="card bg-base-100 w-full md:w-100 shrink-0 shadow-2xl   ">
+    <div className="card bg-base-100 w-[92%] md:w-100 shrink-0 shadow-2xl   ">
 
          <h1 className="text-3xl font-bold text-secondary pt-5 text-center">Update Your Account</h1>
       <div className="card-body w-full">
