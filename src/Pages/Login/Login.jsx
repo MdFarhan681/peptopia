@@ -1,14 +1,19 @@
-import React, { use } from 'react'
+import React, { use, useEffect } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router'
 import { AuthContext } from '../../Provider/AuthProvider'
 import toast from 'react-hot-toast'
 import { useState } from 'react'
-
+import { PiEyeClosed } from "react-icons/pi";
+import { BsEyeglasses } from "react-icons/bs";
 const Login = () => {
   const location=useLocation()
   const navigate=useNavigate()
+  const [email, setEmail] = useState("")
+  const [showPassword, setShowPassword] = useState(false);
+
  
-const{signIn,googleSignIn}=use(AuthContext)
+const{signIn,googleSignIn,}=use(AuthContext)
+
   const handleLogin=(e)=>{
 e.preventDefault()
 const form =e.target;
@@ -52,6 +57,13 @@ toast.error("No user found with that email")
     });
   }
 
+    const handleForgotPassword = () => {
+    navigate("/auth/forget", { state: { email } })
+  
+  }
+
+   
+
 
   return (
    <div className="flex justify-center items-center min-h-screen  ">
@@ -68,13 +80,24 @@ toast.error("No user found with that email")
           {/* Email */}
            <label className="label">Email</label>
           <input type="email"  name="email"className="input w-full" placeholder=" Email"
+         value={email}
+              onChange={(e) => setEmail(e.target.value)}
            />
            {/* password*/}
-          <label className="label">Password</label>
-          <input type="password" name="password" className="input w-full" placeholder="password"
+          <div className="relative">
+            <label className="label">Password</label>
+          <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="password"
           />
+          <button type='button'  onClick={() => setShowPassword(!showPassword)}
+    className=" btn-ghost btn-lg absolute right-3 top-9 transform -translate-y-1/2 text-gray-500 z-3">{
+      showPassword? (<PiEyeClosed size={25} />):(<BsEyeglasses size={25} />)
+    }
 
-           <a className='link link-hover' >Forgot passward?</a>
+
+          </button>
+          </div>
+
+           <a onClick={handleForgotPassword}  className='link link-hover text-blue-600 cursor-pointer' >Forgot passward?</a>
           
           <button type='submit' className="btn bg-primary mt-4">Login</button>
           <p className='font-semibold text-center pt-3'>Don't have an account? 

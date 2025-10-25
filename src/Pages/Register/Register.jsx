@@ -1,11 +1,14 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { auth, AuthContext, googleProvider } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import { PiEyeClosed } from "react-icons/pi";
+import { BsEyeglasses } from "react-icons/bs";
 
 const Register = () => {
   const location = useLocation();
   const navigate = useNavigate();
+   const [showPassword, setShowPassword] = useState(false);
   const { createuser, setuser,googleSignIn, updateUser } = use(AuthContext);
 
   const handleSub = (e) => {
@@ -104,14 +107,20 @@ const Register = () => {
                 className="input w-full"
                 placeholder="Upload your photo"
               />
-              <label className="label">Password</label>
-              <input
-                type="password"
-                name="password"
-                className="input w-full"
-                placeholder=" Password"
-              
-              />
+                {/* password*/}
+                       <div className="relative">
+                         <label className="label">Password</label>
+                       <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="password"
+                       />
+                       <button type='button'  onClick={() => setShowPassword(!showPassword)}
+                 className=" btn-ghost btn-lg absolute right-3 top-9 transform -translate-y-1/2 text-gray-500 z-3">{
+                   showPassword? (<PiEyeClosed size={25} />):(<BsEyeglasses size={25} />)
+                 }
+             
+             
+                       </button>
+                       </div>
+             
 
               <button type="submit" className="btn bg-primary mt-4">
                 Signup{" "}

@@ -10,6 +10,7 @@ import Auth from "../Layouts/Auth/Auth";
 import Register from "../Pages/Register/Register";
 import PrivateRouth from "../Components/PrivateRouth/PrivateRouth";
 import Update from "../Pages/Update/Update";
+import Forget from "../Pages/Forget/Forget";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,9 @@ const router = createBrowserRouter([
     },{
         path:"/auth/register",
         Component:Register,
+    },{
+        path:"/auth/forget",
+        Component:Forget,
     }
     ]
   },
