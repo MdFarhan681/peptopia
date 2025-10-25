@@ -3,9 +3,9 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { Link } from "react-router";
 
 const Profile = () => {
-  const { createuser, setuser, updateUser, user } = use(AuthContext);
+  const { user } = use(AuthContext);
+const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg";
 
-  console.log(user);
 
   return (
     <div>
@@ -16,7 +16,13 @@ const Profile = () => {
             <figure>
               <img
                 className="rounded-sm overflow-hidden object-cover w-full "
-                src={user.photoURL}
+                src={user.photoURL || defaultPhoto}
+
+                 onError={(e) => {
+    e.target.onerror = null; // prevent infinite loop
+    e.target.src =defaultPhoto  ; // fallback
+  }}
+
                 alt="apps"
               />
             </figure>

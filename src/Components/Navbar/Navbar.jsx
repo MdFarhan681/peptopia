@@ -10,7 +10,7 @@ const Navbar = () => {
         const navigate =useNavigate();
 
         const {user,logOut}=use(AuthContext);
-      
+  const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg"; 
 
  const handleNav=()=>{
  setloading(true);
@@ -74,10 +74,7 @@ toast.success("Logged Out Successfully")
          <img className='w-12 h-10 rounded-xl ' src={logo} alt="" />
     <a className=" text-xl text-primary">Peptopia</a>
 
-    <div className="">{user && user.displayName 
- 
     
-    }</div>
 
     </div>
    
@@ -91,7 +88,10 @@ toast.success("Logged Out Successfully")
   {
       user ?(
         <>
-        <Link to='/Profile'className="tooltip tooltip-bottom tooltip-primary" data-tip={user.displayName}> <img  src={user.photoURL || "https://i.ibb.co.com/7dLrnrMw/mann.jpg" } className='w-12 h-12 mx-2 rounded-full border border-blue-300
+        <Link to='/Profile'className="tooltip tooltip-bottom tooltip-primary" data-tip={user.displayName}> <img  src={user.photoURL || defaultPhoto }  onError={(e) => {
+    e.target.onerror = null; 
+    e.target.src = defaultPhoto; 
+  }}className='w-12 h-12 mx-2 rounded-full border border-blue-300
      p-1 hover:'alt="" /></Link>
 
           <button onClick={handleLogOut} className="btn bg-primary rounded-sm ">LogOut</button>

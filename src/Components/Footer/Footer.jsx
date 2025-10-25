@@ -4,8 +4,8 @@ import React, { use } from 'react'
 const Footer = () => {
 
   return (
-    <div>
-    <footer className="footer sm:footer-horizontal bg-[#f1f3f4]   text-base-content p-10 w-full px-[8%]">
+    <div className=''>
+    <footer className="footer sm:footer-horizontal bg-[#f1f3f4]   text-base-content p-10 w-full px-[8%] mx-auto">
   <nav>
     <h6 className="footer-title">Services</h6>
 
@@ -63,9 +63,9 @@ const Footer = () => {
   
 </footer>
  
-<div className="bootm flex justify-center items-center py-5">
+<div className="bootm flex justify-center items-center py-5 px-[7%] text-center">
   
-       <p>Copyright © {new Date().getFullYear()} - All right reserved by Peptopia Pet Care</p>
+       <p className='py-1' >Copyright © {new Date().getFullYear()} - All right reserved by Peptopia Pet Care</p>
 
   </div>
     </div>
