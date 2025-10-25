@@ -35,13 +35,13 @@ const Register = () => {
         const user = userCredential.user;
            updateProfile(user, {
       displayName: name,
-      photoURL: photo,
+      photoURL: photo ||"https://i.ibb.co/7dLrnrMw/mann.jpg",
     })
       .then(() => {
         
         setuser({ ...user, displayName: name, photoURL: photo }); 
         toast.success("Signup Successfull");
-        navigate(location.state ? location.state : "/");
+        navigate( "/");
         form.reset();
       })
       .catch((err) => {
@@ -71,7 +71,7 @@ const Register = () => {
     googleSignIn()
      .then(() => {
       toast.success("Google Sign-In Successful");
-      navigate(`${location.state ? location.state : "/"}`);
+      navigate("/");
     })
     .catch(() => {
       toast.error("Google Sign-In Failed. Try again");
@@ -98,6 +98,7 @@ const Register = () => {
                 name="name"
                 className="input w-full"
                 placeholder="Enter your name"
+                required
               
               />
 
@@ -108,6 +109,7 @@ const Register = () => {
                 name="email"
                 className="input w-full"
                 placeholder=" Email"
+                     required
           
               />
 
@@ -117,12 +119,12 @@ const Register = () => {
                 type="text"
                 name="photo"
                 className="input w-full"
-                placeholder="Upload your photo"
+                placeholder="https://..."
               />
                 {/* password*/}
                        <div className="relative">
                          <label className="label">Password</label>
-                       <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="password"
+                       <input type={showPassword ? "text" : "password"}name="password" className="input w-full" placeholder="Password"     required
                        />
                        <button type='button'  onClick={() => setShowPassword(!showPassword)}
                  className=" btn-ghost btn-lg absolute right-3 top-9 transform -translate-y-1/2 text-gray-500 z-3">{
