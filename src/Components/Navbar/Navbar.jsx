@@ -7,43 +7,42 @@ import 'animate.css';
 
 
 const Navbar = () => {
-     const [loading, setloading] = useState(false);
-        const navigate =useNavigate();
+//      const [loading, setloading] = useState(false);
+//         const navigate =useNavigate();
 
-        const {user,logOut}=use(AuthContext);
-  const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg"; 
+//         const {user,logOut}=use(AuthContext);
+//   const defaultPhoto = "https://i.ibb.co/7dLrnrMw/mann.jpg"; 
 
- const handleNav=()=>{
- setloading(true);
-      setTimeout(()=>{
-        setloading(false)
-        navigate(path)
-      },300)
- }
+//  const handleNav=()=>{
+//  setloading(true);
+//       setTimeout(()=>{
+//         setloading(false)
+//         navigate(path)
+//       },300)
+//  }
 
- const handleLogOut=()=>{
-  // console.log("user trying to logout")
-  logOut().then(()=>{
-toast.success("Logged Out Successfully")
-  }).catch(()=>{
-  //  console.log("Try again to logout");
-  })
- }
+//  const handleLogOut=()=>{
+//   logOut().then(()=>{
+// toast.success("Logged Out Successfully")
+//   }).catch(()=>{
+//     toast.error("Failed to log out")
+//   })
+//  }
 
 
 
 
   
-   const link=(<>
+//    const link=(<>
 
-   <NavLink onClick={()=> handleNav()} className="px-3 font-semibold" to="/">Home</NavLink>
-   <NavLink onClick={()=> handleNav()}  className="px-3 font-semibold" to="/services">Services</NavLink>
-   <NavLink onClick={()=> handleNav()} className="px-3 font-semibold " to="/Profile">My profile</NavLink>
+//    <NavLink onClick={()=> handleNav()} className="px-3 font-semibold" to="/">Home</NavLink>
+//    <NavLink onClick={()=> handleNav()}  className="px-3 font-semibold" to="/services">Services</NavLink>
+//    <NavLink onClick={()=> handleNav()} className="px-3 font-semibold " to="/Profile">My profile</NavLink>
 
    
    
    
-   </>)
+//    </>)
 
     
   return (
@@ -84,6 +83,8 @@ toast.success("Logged Out Successfully")
       {link}
     </ul>
   </div>
+
+  
   <div className="navbar-end">
   {
       user ?(

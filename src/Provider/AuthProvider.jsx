@@ -24,11 +24,13 @@ const AuthProvider = ({ children }) => {
   const logOut=()=>{
     return signOut(auth)
   }
+
+
   const signIn=(email,password)=>{
     setloading(true)
     return signInWithEmailAndPassword(auth,email,password)
   }
-
+ 
   const googleSignIn=()=>{
    return signInWithPopup(auth,googleProvider).then((result)=>{
 

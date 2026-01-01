@@ -12,11 +12,13 @@ import PrivateRouth from "../Components/PrivateRouth/PrivateRouth";
 import Update from "../Pages/Update/Update";
 import Forget from "../Pages/Forget/Forget";
 import Review from "../Components/Review/Review";
+import Error from "../../../../assignment-ten/client/assignment-ten-client/src/Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -26,7 +28,7 @@ const router = createBrowserRouter([
       {
         path: "/services",
         Component: Services,
-         loader: () => fetch("/ServiceData.json"),
+        loader: () => fetch("/ServiceData.json"),
       },
       {
         path: "/Profile",
@@ -42,29 +44,33 @@ const router = createBrowserRouter([
       },
       {
         path: "/ServiceDetails/:serviceId",
-        element:<PrivateRouth>
-          <ServiceDetails></ServiceDetails>
-        </PrivateRouth>,
+        element: (
+          <PrivateRouth>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRouth>
+        ),
 
         loader: () => fetch("/ServiceData.json"),
       },
     ],
   },
   {
-    path:"/auth",
-   Component:Auth,
-    children:[
-    {
-        path:"/auth/login",
-        Component:Login,
-    },{
-        path:"/auth/register",
-        Component:Register,
-    },{
-        path:"/auth/forget",
-        Component:Forget,
-    }
-    ]
+    path: "/auth",
+    Component: Auth,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
+      },
+      {
+        path: "/auth/register",
+        Component: Register,
+      },
+      {
+        path: "/auth/forget",
+        Component: Forget,
+      },
+    ],
   },
 ]);
 export default router;

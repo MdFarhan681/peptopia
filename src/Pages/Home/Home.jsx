@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="py-10 px-[7%]">
       <Slider></Slider>
-
+{/* 
       <main className="care py-15 flex flex-col ">
         <h2 className="text-secondary text-xl md:text-3xl font-bold text-center pb-5">Popular Winter Care Services
         </h2>
@@ -45,7 +45,7 @@ const Home = () => {
       </div>
 
      
-      </main>
+      </main> */}
 
     </div>
   );
